@@ -3,7 +3,7 @@ package models;
 import java.util.ArrayList;
 
 public class Node {
-    protected int id;
+    private int id;
     private ArrayList<Node> incidentNodes = new ArrayList<>();
 
     Node(int id) {
@@ -15,11 +15,15 @@ public class Node {
         node.incidentNodes.add(this);
     }
 
-    private void connectOrientedNodes(Node node) {
+    void connectOrientedNodes(Node node) {
         this.incidentNodes.add(node);
     }
 
     public int getId() {
         return id;
+    }
+
+    ArrayList<Node> getIncidentNodes() {
+        return incidentNodes;
     }
 }
